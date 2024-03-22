@@ -22,6 +22,7 @@ def choose():
         new_window.title("MetaData") 
         def change():
             MetaWriter(entries[0].get(),entries[1].get(),entries[2].get(),entries[3].get(),entries[4].get(),entries[5].get(),entries[6].get(),value)
+            new_window.destroy()
         fields = [
             "Creator", "Producer", "CreationDate", 
             "ModDate", "KeyWords", "Author", "Title"
