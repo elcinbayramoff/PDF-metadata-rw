@@ -23,6 +23,9 @@ def choose():
         def change():
             MetaWriter(entries[0].get(),entries[1].get(),entries[2].get(),entries[3].get(),entries[4].get(),entries[5].get(),entries[6].get(),value)
             new_window.destroy()
+        def delete_all():
+            MetaWriter('','','','','','','',value)
+            new_window.destroy()
         fields = [
             "Creator", "Producer", "CreationDate", 
             "ModDate", "KeyWords", "Author", "Title"
@@ -32,10 +35,16 @@ def choose():
             entry = create_entry_pair(new_window, field, i)
             entry.insert(0,data[i])
             entries.append(entry)
-        submit = tk.Button(new_window,text='Submit',command=change)
-        submit.grid(row=7,column=0,columnspan=2)
+        button_frame = tk.Frame(new_window)
+        button_frame.grid(row=7, column=0, columnspan=2, pady=10)
+
+        submit = tk.Button(button_frame, text='Submit', command=change)
+        submit.grid(row=0,column=0,padx=20)
+
+        deleteall = tk.Button(button_frame, text='Delete all', command=delete_all)
+        deleteall.grid(row=0,column=1)
     else:
-        not_found.grid(column=0,row=2,columnspan=2)
+        not_found.grid(column=0,row=2,columnspan=2,padx=20)
         
 root = tk.Tk()
 
@@ -51,5 +60,6 @@ open_button.grid(column=1, row=0,pady=10)
 
 see_metadata_button = tk.Button(root,text="See metadata", command=choose,padx=10,pady=10)
 see_metadata_button.grid(column=0,row=1,columnspan=2)
+
 not_found = tk.Label(root,text = "Invalid type")
 root.mainloop()
