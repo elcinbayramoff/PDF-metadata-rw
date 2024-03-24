@@ -1,2 +1,2 @@
-PyPDF2 @ git+https://github.com/elcinbayramoff/pypdf.git@3214dde1d2c0f7c9071ba4157d82cdb796dd73d4
+PyPDF2 @ git+https://github.com/elcinbayramoff/pypdf.git@df20848fc02f29e3240bbbb4e88b166d75cefc23
 pytz==2024.1
