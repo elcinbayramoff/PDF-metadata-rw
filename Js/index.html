@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Metadata</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <script src="https://unpkg.com/pdf-lib@1.17.1"></script>
+    <script src="https://unpkg.com/downloadjs@1.4.7"></script>
+</head>
+<body>
+        <main class="container">
+      <h1>Hello world!</h1>
+
+    <div class="see-metadata">
+        <input type="file" id="pdfpath">
+        <button type="button" id="seemeta" onclick="showMeta()">See Metadata</button><br>
+    </div>
+    <style>
+        .row {
+            display: flex;
+            align-items: center;
+        }
+        .row > * {
+            margin: 0;
+        }
+        .row a {
+            border-radius: 50%;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+        }
+    </style>
+    <div class="metadata">
+        <label for="creator">Creator</label>
+        <div class="row">
+            <input type="text" id="creator">
+        </div>
+
+        <label for="producer">Producer</label>
+        <div class="row">
+            <input type="text" id="producer">
+        </div> 
+
+        <label for="creationDate">Creation Date</label>
+        <div class="row">
+            <input type="text" id="creationDate">
+        </div>
+
+        <label for="modDate">Modification Date</label>
+        <div class="row">
+            <input type="text" id="modDate">
+        </div>
+
+        <label for="keywords">Keywords</label>
+        <div class="row">
+            <input type="text" id="keywords">
+        </div>
+
+        <label for="author">Author</label>
+        <div class="row">
+            <input type="text" id="author">
+        </div>
+
+        <label for="title">Title</label>
+        <div class="row">
+        <input type="text" id="title">
+        </div>
+
+        <label for="subject">Subject</label>
+        <div class="row">
+        <input type="text" id="subject">
+        </div>
+        
+    </div>
+    <div>
+        <button type="button" onclick="updatemeta()">Update and download</button>
+    </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
